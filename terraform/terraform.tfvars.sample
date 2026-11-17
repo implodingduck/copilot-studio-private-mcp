@@ -1,0 +1,22 @@
+# Alternative Terraform variable file. The README uses terraform/.env instead;
+# do not configure the same inputs in both: .tfvars overrides TF_VAR_ values.
+subscription_id     = "00000000-0000-0000-0000-000000000000"
+location            = "eastus"
+secondary_location  = "westus"
+power_platform_geo  = "unitedstates"
+gh_repo             = "implodingduck/copilot-studio-private-mcp"
+
+# Optional: Entra principal object IDs for the administrator associating the policy.
+# power_platform_admin_object_ids = ["00000000-0000-0000-0000-000000000000"]
+
+# After saving the custom connector, copy its exact generated callback URL here.
+# connector_redirect_uris = ["https://global.consent.azure-apim.net/redirect/EXACT-CONNECTOR-URL"]
+
+# Recommended: use the custom connector's managed identity authentication.
+# Copy the exact issuer and subject from its Security page, then terraform apply.
+# connector_federation = {
+#   issuer  = "https://EXACT-ISSUER-FROM-CONNECTOR/"
+#   subject = "EXACT-SUBJECT-FROM-CONNECTOR"
+# }
+
+# scripts/deploy.sh persists mcp_image_uri in mcp.auto.tfvars.json.
